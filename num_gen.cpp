@@ -173,27 +173,13 @@ std::cout<< final_state;
 color("AND FINAL OPERATOR","blue");
 std::cout<<choosed_isp;
 color("IN THE FILE ","blue");
-std::cout<<"numgenout.txt"<<std::endl;
+std::cout<<"\n IN Their series code ."<<std::endl;
   auto indict=statecodes.find(final_state);
     auto indictisp=indict->second.find(choosed_isp);
     for (auto each:indictisp->second){
       generator(each);
         
     }
-    // for (const auto& country : statecodes) 
-    //     // std::cout << "Country: " << country.first << std::endl;
 
-    //     // Iterate over each state in the current country
-    //     for (const auto& state : country.second) {
-    //         // std::cout << "\tOperators" << state.first << std::endl;
-
-    //         // Iterate over each integer in the vector for the current state
-    //         std::cout << "\t\tIntegers: ";
-    //         for (int num : state.second) {
-    //             std::cout << num << " ";
-    //         }
-    //         std::cout << std::endl;
-    //     }
-    // }
 return 0;
 }
