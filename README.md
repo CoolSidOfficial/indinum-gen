@@ -12,7 +12,7 @@ Usage FOR LINUX
 
 Usage for Windows
 `g++ num_gen.cpp -o num_gen.exe && ./num_gen.exe`
-#Current States
+# Current States
     "Andhra Pradesh",
             "Assam",
                     "Bihar & Jharkhand",
@@ -24,9 +24,9 @@ Usage for Windows
                                                                     "West Bengal"
                                                                             
 
-##Note: The Only series adde  currently is 90 series for other series you can message me 
+## Note: The Only series adde  currently is 90 series for other series you can message me 
 
-#Upcoming Update would be making this into arguments to save time
+# Upcoming Update would be making this into arguments to save time
 
 
 
