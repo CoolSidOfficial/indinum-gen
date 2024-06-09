@@ -86,10 +86,11 @@ std::unordered_map <std::string,std::unordered_map <std::string,std::vector<int>
 
 
 
-void  generator(int  four=9200){
+void  generator(int  four){
 	int count=0;
    std::ofstream output_file;
-   output_file.open("9200.txt");
+   std::string filename=std::to_string(four);
+   output_file.open(filename +".txt");
   while (count<=999999){
    std::ostringstream final_string;
     final_string<< four <<std::setw(6)<<std::setfill('0')<<count;
@@ -99,22 +100,39 @@ void  generator(int  four=9200){
   output_file.close();
 }
 
-int choose_isp(){
-   int ispc2;	
+std::string choose_isp(){
+   std::string  ispc2;	
   clear();
   std::cout<<"Choose a ISP from given below\n";
-  color("[1]>>Airtel","red");
+  color("[1]>>AIRTEL","red");
 
   std::cout<<"\n";
-  color("[2]>>Bsnl","blue");
+  color("[2]>>BSNL","blue");
   std::cout<<"\n";
   color("[3]>>Reliance Jio","cyan");
   std::cout<<"\n";
-  color("[4]>>Voadafone Idea","white");
+  color("[4]>>Vodafone Idea","white");
 	
   std::cout<<"\n"<<"Choose a number [>>]";
   std::cin>>ispc2;
-  return ispc2;
+  if (ispc2=="1"){
+      return "AIRTEL";
+  }
+  else if (ispc2=="2"){
+      return "BSNL";
+  }
+  else if (ispc2=="3"){
+      return "Reliance Jio";
+  }
+  else if (ispc2=="4"){
+      return "Vodafone Idea";
+  }
+  else{
+      std::cout<<"You enter wrong input";
+      clear();
+      sleep(3);
+      return "E";
+  }
 } 
 std::string  intro_func()
 {
@@ -148,15 +166,34 @@ else{
                    }  
 int main(){
 	std::string  final_state=intro_func();	
-int final_isp=choose_isp();
+std::string  choosed_isp=choose_isp();
 clear();
 color("PLEASE WAIT GENERATING NUMBERS FOR ","blue");
 std::cout<< final_state;
 color("AND FINAL OPERATOR","blue");
-std::cout<<final_isp;
+std::cout<<choosed_isp;
 color("IN THE FILE ","blue");
 std::cout<<"numgenout.txt"<<std::endl;
-generator();
+  auto indict=statecodes.find(final_state);
+    auto indictisp=indict->second.find(choosed_isp);
+    for (auto each:indictisp->second){
+      generator(each);
+        
+    }
+    // for (const auto& country : statecodes) 
+    //     // std::cout << "Country: " << country.first << std::endl;
 
+    //     // Iterate over each state in the current country
+    //     for (const auto& state : country.second) {
+    //         // std::cout << "\tOperators" << state.first << std::endl;
+
+    //         // Iterate over each integer in the vector for the current state
+    //         std::cout << "\t\tIntegers: ";
+    //         for (int num : state.second) {
+    //             std::cout << num << " ";
+    //         }
+    //         std::cout << std::endl;
+    //     }
+    // }
 return 0;
 }
