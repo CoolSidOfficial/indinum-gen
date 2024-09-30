@@ -8,9 +8,10 @@
 #include<sstream>
 #include<iomanip>
 #include<unordered_map>
+#include<direct.h>
 std::vector<std::string> indianStates = {
 
-    "Andhra Pradesh",
+        "Andhra Pradesh",
         "Assam",
         "Bihar & Jharkhand",
         "DELHI",
@@ -87,9 +88,11 @@ std::unordered_map <std::string,std::unordered_map <std::string,std::vector<int>
 
 
 void  generator(int  four){
-	int count=0;
+   int count=0;
+  
    std::ofstream output_file;
    std::string filename=std::to_string(four);
+
    output_file.open(filename +".txt");
   while (count<=999999){
    std::ostringstream final_string;
@@ -173,7 +176,14 @@ std::cout<< final_state;
 color("AND FINAL OPERATOR","blue");
 std::cout<<choosed_isp;
 color("IN THE FILE ","blue");
+
 std::cout<<"\n IN Their series code ."<<std::endl;
+const char* pathname=("OUTPUT-"+choosed_isp+"-"+final_state).c_str() ;
+int create_dir=_mkdir(pathname);
+int change_dir=_chdir(pathname);
+if (change_dir==1){
+    std::cout<<"Internal Error occured while creating disk "<<std::endl;
+   }
   auto indict=statecodes.find(final_state);
     auto indictisp=indict->second.find(choosed_isp);
     for (auto each:indictisp->second){
