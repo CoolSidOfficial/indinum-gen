@@ -13,16 +13,30 @@ Usage FOR LINUX
 Usage for Windows
 `g++ num_gen.cpp -o num_gen.exe && ./num_gen.exe`
 # Current States
-    "Andhra Pradesh",
-            "Assam",
-                    "Bihar & Jharkhand",
-                            "DELHI",
-                                    "Gujarat",
-                                            "Tamil Nadu",
-                                                    "UTTAR PRADESH EAST",
-                                                            "UTTAR PRADESH West",
-                                                                    "West Bengal"
-                                                                            
+"Andhra Pradesh"
+"Assam"
+"Bihar & Jharkhand"
+"DELHI"
+"Gujarat"
+"Haryana"
+"Himachal Pradesh"
+"Jammu and Kashmir"
+"Karnataka"
+"Kerala & Lakshadweep"
+"Kolkata"
+"Madhya Pradesh & Chhattisgarh"
+"Maharashtra & Goa"
+"Mumbai"
+"North East"
+"Odisha"
+"Punjab"
+"Rajasthan"
+"Tamil Nadu"
+"UP"
+"UTTAR PRADESH EAST"
+"UTTAR PRADESH West"
+"West Bengal"
+
 
 ## Note: The Only series adde  currently is 90 series for other series you can message me 
 
